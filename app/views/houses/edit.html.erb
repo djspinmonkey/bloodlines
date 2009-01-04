@@ -1,0 +1,12 @@
+<h1>Editing house</h1>
+
+<% form_for(@house) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @house %> |
+<%= link_to 'Back', houses_path %>

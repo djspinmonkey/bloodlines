@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Bloodlines Genetics Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+    <%= stylesheet_link_tag 'scaffold' %>
+    <%= stylesheet_link_tag 'old_book' %>
+    <%= javascript_include_tag :defaults %>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="logo">
+        &nbsp;&nbsp;
+        Bloodlines Genetics Demo
+      </div>
+      <div class="text">
+        <div class="block">
+          <%= yield %>
+        </div>
+      </div>
+      <div class="bottom">
+        Genetics Demo by <a href="mailto:john@dontmailme.com">John Hyland</a> &copy; 2008.
+      </div>
+    </div>
+
+    <div class="menu_right">
+      <div class="logo">
+        Navigation
+      </div>
+      <center>
+        <ul class="link_menu">
+          <li><%= link_to 'Houses', houses_url %>
+          <li><%= link_to 'Characters', characters_url %>
+          <li><%= link_to 'Races', races_url %>
+          <li><%= link_to 'Traits', traits_url %>
+        </ul>
+      </center>
+
+      <div class="logo">
+        Detail
+      </div>
+      <div id="detail">
+        Extra info goes here - try clicking something!
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+/*=tag*/
+body {
+	background-color: #666;
+	font-size: 100%;
+}
+img {
+	/*border: 3px double #999999;*/
+}
+h2 {
+	position:relative;
+	text-align: center;
+	width:92%;
+	left:5%;
+	color: #CCCCCC;
+	border-bottom-width: 3px;
+	border-bottom-style: double;
+	border-bottom-color: #CCCCCC;
+}
+.block {
+	position:relative;
+	font-size: 90%;
+	font-weight: bold;
+	color: #000000;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #000000;
+	border-bottom-color: #000000;
+	width:90%;
+	left:5%;
+	background-color: #999;
+	padding: 0 5px 3px 5px;
+}
+input[type="submit"] {
+	position:relative;
+	background-color: #660000;
+	margin-top:2px;
+	border:0px;
+	color:#FFFFFF;
+	font-size: 70%;
+}
+input[type="text"],[type="password"] {
+	position:relative;
+	background-color: #000000;
+	margin-top:2px;
+	border: 3px double #333333;
+	color:#FFFFFF;
+	font-size: 70%;
+}
+/*=class*/
+.main {
+	position:absolute;
+	top:5%;
+	left:5%;
+	width:60%;
+	border: 3px double #000000;
+	background-color: #660000;
+}
+
+.text {
+	margin:3px;
+	font-size: 90%;
+	color: #CCCCCC;
+	
+}
+.menu_right {
+	position:absolute;
+	left:70%;
+	top:5%;
+	width:25%;
+	border: 3px double #000000;
+	background-color: #660000;
+}
+.main .logo {
+	position:relative;
+	text-align: left;
+	font-size: 120%;
+	height: 100px;
+	font-weight: bold;
+	border-bottom-width: 3px;
+	border-bottom-style: double;
+	border-bottom-color: #000;
+	color: #FFFFFF;
+	background-color: Black;
+	margin-bottom:5px;
+	background: url(/images/space.gif) no-repeat center;
+}
+.logo {
+	position:relative;
+	text-align:center;
+	font-size: 120%;
+	font-weight: bold;
+	border-bottom-width: 3px;
+	border-bottom-style: double;
+	border-bottom-color: #333333;
+	color: #FFFFFF;
+	background-color: #000000;
+	margin-bottom:5px;
+}
+
+.bottom {
+	position:relative;
+	text-align:center;
+	font-size: 70%;
+	font-weight: bold;
+	border-top-width: 3px;
+	border-top-style: double;
+	border-top-color: #333333;
+	color: #FFFFFF;
+	background-color: #000000;
+	margin-top:5px;
+}
+.zaglav{
+	font-size: 120%;
+	font-weight: bold;
+	color: #000066;
+}
+.img_left, .img_right {
+	margin: 5px;
+	border: 3px double #CCCCCC;
+}
+.img_left{
+	float:left;
+}
+.img_right{
+	float:right;
+}
+.link_menu {
+	margin:0px;
+	height:80px;
+	padding:0 0 5px 0;
+	position:relative;
+	margin:2px 0 0 0;
+	font-size: 90%;
+	list-style-type: none;
+	color: #FFFFFF;
+}
+
+
+.link_menu a{
+	color: #FFFFFF;
+	font-size: 90%;
+}
+.link_menu a:hover{
+	font-size: 90%;
+}
+.link_menu a:visited{
+	font-size: 90%;
+	padding:0 0 0 15px;
+}
+.valid {
+position:relative;
+top:10%;
+border:0px;
+float:right;
+}
+
+div#human_trait_block {
+  background-color: #aa4;
+  border: 1px solid;
+  padding: 5px;
+}
+div#elf_trait_block {
+  background-color: #4a4;
+  border: 1px solid;
+  padding: 5px;
+}
+div#dwarf_trait_block {
+  background-color: #770;
+  border: 1px solid;
+  padding: 5px;
+}
+div#orc_trait_block {
+  background-color: #191;
+  border: 1px solid;
+  padding: 5px;
+}
+
+div#detail {
+  background-color: #777;
+  color: #000;
+  padding: 5px;
+}
+
+/*=id*/

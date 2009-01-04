@@ -1,0 +1,3 @@
+<% div_for marriage do %>
+  <%= link_to_remote h(marriage.husband.name), :url => character_url(marriage.husband), :method => :get %> - <%= link_to_remote h(marriage.wife.name), :url => character_url(marriage.wife), :method => :get %>
+<% end %>

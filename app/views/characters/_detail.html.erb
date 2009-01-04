@@ -1,0 +1,38 @@
+<b>Name:</b>
+<%=h character.name %>
+<br><br>
+
+<b>Gender:</b>
+<%=h character.gender.humanize %>
+<br><br>
+
+<b>Spouse:</b>
+<%= spouse_link(character) %>
+<br><br>
+
+<b>House:</b>
+<%= link_to h(character.house.name), character.house %>
+<br><br>
+
+<b>Parents:</b>
+<% if character.parents.nil? %>
+  adopted<br>
+<% else %>
+  <%= render :partial => 'marriages/marriage', :object => character.parents %>
+<% end %>
+<br>
+
+<b>Race:</b>
+<%= character.race_string %>
+<br><br>
+
+<% character.races.each do |r| %>
+  <div id="<%= r.name.downcase %>_trait_block">
+    <%= r.name %> Traits
+    <ul>
+      <% character.racial_traits(r).each do |t| %>
+      <li><%= link_to h(t.name), t %> - <%=h t.description %>
+      <% end %>
+    </ul>
+  </div><br>
+<% end %>

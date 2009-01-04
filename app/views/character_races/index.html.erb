@@ -1,0 +1,24 @@
+<h1>Listing character_races</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Race</th>
+    <th>Parts</th>
+  </tr>
+
+<% for character_race in @character_races %>
+  <tr>
+    <td><%=h character_race.character_id %></td>
+    <td><%=h character_race.race_id %></td>
+    <td><%=h character_race.parts %></td>
+    <td><%= link_to 'Show', character_race %></td>
+    <td><%= link_to 'Edit', edit_character_race_path(character_race) %></td>
+    <td><%= link_to 'Destroy', character_race, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New character_race', new_character_race_path %>

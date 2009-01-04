@@ -1,0 +1,10 @@
+<% div_for(character, prefix) do %>
+  <% remote_form_for character do |f| %>
+    <%= link_to_remote h(character.name), :url => character_url(character), :method => :get %>
+    <% if allow_marriage and character.potential_spouses.size > 0 %>
+      <%= f.select :spouse_id, character.potential_spouses.collect { |c| [c.name, c.id] } %>
+      <%= f.hidden_field :new_marriage, :value => true %>
+      <%= submit_tag :marry %>
+    <% end %>
+  <% end %>
+<% end %>

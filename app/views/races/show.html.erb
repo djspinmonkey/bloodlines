@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @race.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @race.description %>
+</p>
+
+<p>
+  <b>Traits</b>
+  <table border=1>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <% @race.traits.each do |t| %>
+    <tr>
+      <td><%= link_to h(t.name), t %></td>
+      <td><%=h t.description %></td>
+    </tr>
+    <% end %>
+  </table>
+</p>
+
+<%= link_to 'Edit', edit_race_path(@race) %> |
+<%= link_to 'Back', races_path %>

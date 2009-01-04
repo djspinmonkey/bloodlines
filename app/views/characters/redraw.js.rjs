@@ -1,0 +1,15 @@
+if @unmarried_present
+  page.replace_html( 'unmarried_characters', render(:partial => "characters/character", :collection => @character.house.characters.unmarried, :locals => { :allow_marriage => @allow_marriage, :prefix => 'unmarried' } ))
+end
+
+if @marriages_present
+  page.replace_html( 'marriages', render(:partial => "marriages/marriage", :collection => @character.house.marriages, :locals => { :allow_offspring => @allow_offspring } ))
+end
+
+if @generic_present
+  page.replace_html( 'characters', render(:partial => "characters/character", :collection => @character.house.characters, :locals => { :allow_marriage => @allow_marriage } ))
+end
+
+if @character
+  page.replace_html :detail, :partial => 'detail', :locals => {:character => @character}
+end

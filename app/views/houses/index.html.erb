@@ -1,0 +1,21 @@
+<h1>Listing houses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for house in @houses %>
+  <tr>
+    <td><%= link_to house.name, house %></td>
+    <td><%= house.description %></td>
+    <td><%= link_to 'Edit', edit_house_path(house) %></td>
+    <td><%= link_to 'Destroy', house, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New house', new_house_path %>

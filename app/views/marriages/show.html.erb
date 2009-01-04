@@ -1,0 +1,13 @@
+<p>
+  <b>Husband:</b>
+  <%= render :partial => 'characters/character', :object => @marriage.husband %>
+</p>
+
+<p>
+  <b>Wife:</b>
+  <%= render :partial => 'characters/character', :object => @marriage.wife %>
+</p>
+
+
+<%= link_to 'Edit', edit_marriage_path(@marriage) %> |
+<%= link_to 'Back', marriages_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Character:</b>
+  <%=h @character_race.character_id %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%=h @character_race.race_id %>
+</p>
+
+<p>
+  <b>Parts:</b>
+  <%=h @character_race.parts %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_race_path(@character_race) %> |
+<%= link_to 'Back', character_races_path %>

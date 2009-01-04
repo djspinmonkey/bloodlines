@@ -1,0 +1,45 @@
+<b>Name:</b>
+<div id="house_name" class="name">
+  <%=h @house.name %>
+</div><br>
+
+<b>Description:</b>
+<div id="house_description" class="description">
+  <%=h @house.description %>
+</div><br>
+
+<b>Marriages</b>
+<div id="marriages" class="marriages">
+  <%= render :partial => "marriages/marriage", :collection => @house.marriages, :locals => { :allow_offspring => true } %>
+</div><br>
+
+<b>Un-Married Characters</b>
+<div id="unmarried_characters" class="characters">
+  <%= render :partial => "characters/character", :collection => @house.characters.unmarried, :locals => { :allow_marriage => true, :prefix => 'unmarried' } %>
+</div><br>
+
+<div id="character_spawn_form">
+  <% remote_form_for(:character, :url => characters_path) do |f| %>
+    <table>
+      <tr><th colspan=2>Spawn some offspring</th></tr>
+      <tr><td>Name:</td><td><%= f.text_field :name %></td></tr>
+      <tr><td>Gender:</td><td><%= f.select :gender, Character::GENDERS.collect { |g| [g.to_s.humanize, g] }  %></td></tr>
+      <tr><td>Parents:</td><td><%= f.select :parents_id, @house.marriages.collect { |m| ["#{m.husband.name} and #{m.wife.name}", m.id]}  %></td></tr>
+      <tr><td><!-- empty cell --></td><td><%= submit_tag :spawn %></td></tr>
+      <%= f.hidden_field :house_id, :value => @house.id %>
+    </table>
+  <% end %>
+</div>
+
+<div id="character_adoption_form">
+  <% remote_form_for(:character, :url => characters_path) do |f| %>
+    <table>
+      <tr><th colspan=2>Adopt a peasant</th></tr>
+      <tr><td>Name:</td><td><%= f.text_field :name %></td></tr>
+      <tr><td>Gender:</td><td><%= f.select :gender, Character::GENDERS.collect { |g| [g.to_s.humanize, g] }  %></td></tr>
+      <tr><td>Race:</td><td><%= f.select :race, @races.collect(&:name) %></td></tr>
+      <tr><td><!-- empty cell --></td><td><%= submit_tag :adopt %></td></tr>
+      <%= f.hidden_field :house_id, :value => @house.id %>
+    </table>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<h1>Listing marriages</h1>
+
+<table>
+  <tr>
+    <th>Husband</th>
+    <th>Wife</th>
+  </tr>
+
+<% for marriage in @marriages %>
+  <tr>
+    <td><%=h marriage.husband.name %></td>
+    <td><%=h marriage.wife.name %></td>
+    <td><%= link_to 'Show', marriage %></td>
+    <td><%= link_to 'Edit', edit_marriage_path(marriage) %></td>
+    <td><%= link_to 'Destroy', marriage, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New marriage', new_marriage_path %>

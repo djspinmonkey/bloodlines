@@ -1,0 +1,18 @@
+<p>
+  <b>Character:</b>
+  <%=h @character_trait.character_id %>
+</p>
+
+<p>
+  <b>Trait:</b>
+  <%=h @character_trait.trait_id %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%=h @character_trait.race_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_trait_path(@character_trait) %> |
+<%= link_to 'Back', character_traits_path %>

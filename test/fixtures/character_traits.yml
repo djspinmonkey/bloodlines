@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  character_id: 1
+  trait_id: 1
+  race_id: 1
+
+two:
+  character_id: 1
+  trait_id: 1
+  race_id: 1

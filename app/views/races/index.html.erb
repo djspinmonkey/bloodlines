@@ -1,0 +1,22 @@
+<h1>Listing races</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for race in @races %>
+  <tr>
+    <td><%=h race.name %></td>
+    <td><%=h race.description %></td>
+    <td><%= link_to 'Show', race %></td>
+    <td><%= link_to 'Edit', edit_race_path(race) %></td>
+    <td><%= link_to 'Destroy', race, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New race', new_race_path %>

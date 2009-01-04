@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @trait.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @trait.description %>
+</p>
+
+<p>
+  <b>Races</b>
+  <%= @trait.races.collect{ |r| link_to h(r.name), r }.join(', ') %>
+</p>
+
+
+<%= link_to 'Edit', edit_trait_path(@trait) %> |
+<%= link_to 'Back', traits_path %>

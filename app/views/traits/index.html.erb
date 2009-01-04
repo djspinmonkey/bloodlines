@@ -1,0 +1,24 @@
+<h1>Listing traits</h1>
+
+<table border=1>
+  <tr>
+    <th>Name</th>
+    <th>Bonuses</th>
+    <th>Races</th>
+    <th>Actions</th>
+  </tr>
+
+<% for trait in @traits %>
+  <tr>
+    <td><%= link_to h(trait.name), trait %></td>
+    <td><%= trait.bonus_string %></td>
+    <td><%= trait.races.collect{ |r| link_to h(r.name), r }.join(', ') %>
+    <td><%= link_to 'Edit', edit_trait_path(trait) %>
+        <%= link_to 'Destroy', trait, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New trait', new_trait_path %>
