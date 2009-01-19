@@ -24,7 +24,7 @@
       <tr><th colspan=2>Spawn some offspring</th></tr>
       <tr><td>Name:</td><td><%= f.text_field :name %></td></tr>
       <tr><td>Gender:</td><td><%= f.select :gender, Character::GENDERS.collect { |g| [g.to_s.humanize, g] }  %></td></tr>
-      <tr><td>Parents:</td><td><%= f.select :parents_id, @house.marriages.collect { |m| ["#{m.husband.name} and #{m.wife.name}", m.id]}  %></td></tr>
+      <tr><td>Parents:</td><td><%= f.select :init_parents_id, @house.marriages.collect { |m| ["#{m.husband.name} and #{m.wife.name}", m.id]}  %></td></tr>
       <tr><td><!-- empty cell --></td><td><%= submit_tag :spawn %></td></tr>
       <%= f.hidden_field :house_id, :value => @house.id %>
     </table>
