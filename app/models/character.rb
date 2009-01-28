@@ -24,7 +24,11 @@ class Character < ActiveRecord::Base
 
   # TODO: validations
 
-  def init_parents=(parents_id)
+  def init_parents_id
+    return nil
+  end
+
+  def init_parents_id=(parents_id)
     self.parents = Marriage.find(parents_id)
 
     half_parts = []

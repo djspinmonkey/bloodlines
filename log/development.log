@@ -1,0 +1,215 @@
+
+
+Processing HousesController#show (for 127.0.0.1 at 2009-01-18 19:31:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mHouse Load (0.5ms)[0m   [0mSELECT * FROM "houses" WHERE ("houses"."id" = 1) [0m
+  [4;36;1mRace Load (0.5ms)[0m   [0;1mSELECT * FROM "races" [0m
+Rendering template within layouts/old_book
+Rendering houses/show
+  [4;35;1mMarriage Load (1.6ms)[0m   [0mSELECT DISTINCT "marriages".* FROM "marriages" INNER JOIN characters ON marriages.id = characters.marriage_id WHERE (("characters".house_id = 1)) [0m
+  [4;36;1mCharacter Load (0.4ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 1) [0m
+Rendered marriages/_marriage (6.1ms)
+  [4;35;1mCharacter Load (0.5ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 2) [0m
+Rendered marriages/_marriage (1.7ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 3) [0m
+Rendered marriages/_marriage (1.5ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 4) [0m
+Rendered marriages/_marriage (1.5ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 5) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 6) [0m
+Rendered marriages/_marriage (1.6ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 7) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 30) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;36;1mCharacter Load (0.4ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".house_id = 1 AND (marriage_id is null)) [0m
+  [4;35;1mCharacter Load (0.9ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (3.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.8ms)
+  [4;35;1mCharacter Load (0.5ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.7ms)
+Completed in 73ms (View: 53, DB: 7) | 200 OK [http://localhost/houses/1]
+
+
+Processing HousesController#show (for 127.0.0.1 at 2009-01-18 19:33:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mHouse Load (0.5ms)[0m   [0mSELECT * FROM "houses" WHERE ("houses"."id" = 1) [0m
+  [4;36;1mRace Load (0.5ms)[0m   [0;1mSELECT * FROM "races" [0m
+Rendering template within layouts/old_book
+Rendering houses/show
+  [4;35;1mMarriage Load (3.2ms)[0m   [0mSELECT DISTINCT "marriages".* FROM "marriages" INNER JOIN characters ON marriages.id = characters.marriage_id WHERE (("characters".house_id = 1)) [0m
+  [4;36;1mCharacter Load (0.6ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 1) [0m
+Rendered marriages/_marriage (5.9ms)
+  [4;35;1mCharacter Load (0.5ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 2) [0m
+Rendered marriages/_marriage (1.7ms)
+  [4;36;1mCharacter Load (0.4ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 3) [0m
+Rendered marriages/_marriage (1.6ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 4) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 5) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 6) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 7) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 30) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".house_id = 1 AND (marriage_id is null)) [0m
+  [4;35;1mCharacter Load (0.9ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (3.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.7ms)
+  [4;35;1mCharacter Load (0.4ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (2.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.7ms)
+Completed in 72ms (View: 51, DB: 9) | 200 OK [http://localhost/houses/1]
+
+
+Processing CharactersController#create (for 127.0.0.1 at 2009-01-18 19:33:11) [POST]
+  Parameters: {"commit"=>"spawn", "character"=>{"init_parents_id"=>"1", "name"=>"Bobaroonie", "house_id"=>"1", "gender"=>"male"}, "authenticity_token"=>"6922984a84b8ef2cce012d83c11073aa88be2cee"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mMarriage Load (0.5ms)[0m   [0mSELECT * FROM "marriages" WHERE ("marriages"."id" = 1) [0m
+  [4;36;1mCharacter Load (0.5ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 1) [0m
+  [4;35;1mRace Load (1.4ms)[0m   [0mSELECT "races".* FROM "races" INNER JOIN character_races ON races.id = character_races.race_id WHERE (("character_races".character_id = 11)) [0m
+  [4;36;1mRace Load (0.5ms)[0m   [0;1mSELECT "races".* FROM "races" INNER JOIN character_races ON races.id = character_races.race_id WHERE (("character_races".character_id = 12)) [0m
+  [4;35;1mCharacterRace Load (0.3ms)[0m   [0mSELECT * FROM "character_races" WHERE ("character_races".character_id = 11) [0m
+  [4;36;1mRace Load (0.3ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCharacterRace Load (0.3ms)[0m   [0mSELECT * FROM "character_races" WHERE ("character_races".character_id = 12) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCharacterTrait Load (1.3ms)[0m   [0;1mSELECT * FROM "character_traits" WHERE ("character_traits".character_id = 11) [0m
+  [4;35;1mTrait Load (0.9ms)[0m   [0mSELECT * FROM "traits" WHERE ("traits"."id" IN (6,12,13,8,14,9,26,27,17,2,18,29,30,19,20,5)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCharacterTrait Load (0.8ms)[0m   [0;1mSELECT * FROM "character_traits" WHERE ("character_traits".character_id = 12) [0m
+  [4;35;1mTrait Load (0.4ms)[0m   [0mSELECT * FROM "traits" WHERE ("traits"."id" IN (7,24,13,8,9,25,27,16,1,30,29,18,19,20,31,32)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "races" WHERE ("races"."id" = 1) [0m
+  [4;36;1mTrait Load (36.9ms)[0m   [0;1mSELECT * FROM "traits" INNER JOIN "races_traits" ON "traits".id = "races_traits".trait_id WHERE ("races_traits".race_id = 1 ) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "characters" ("name", "updated_at", "house_id", "gender", "spouse_id", "parents_id", "marriage_id", "age", "created_at") VALUES(E'Bobaroonie', '2009-01-19 00:33:11.806246', 1, E'male', NULL, 1, NULL, NULL, '2009-01-19 00:33:11.806246') RETURNING "id"[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.896935', 1, 4, 137, '2009-01-19 00:33:11.896935') RETURNING "id"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.903624', 1, 6, 137, '2009-01-19 00:33:11.903624') RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.905176', 1, 2, 137, '2009-01-19 00:33:11.905176') RETURNING "id"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.906581', 1, 25, 137, '2009-01-19 00:33:11.906581') RETURNING "id"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.907920', 1, 24, 137, '2009-01-19 00:33:11.907920') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.909230', 1, 30, 137, '2009-01-19 00:33:11.909230') RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.910472', 1, 17, 137, '2009-01-19 00:33:11.910472') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.911697', 1, 21, 137, '2009-01-19 00:33:11.911697') RETURNING "id"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.912938', 1, 5, 137, '2009-01-19 00:33:11.912938') RETURNING "id"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.970964', 1, 29, 137, '2009-01-19 00:33:11.970964') RETURNING "id"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.973218', 1, 20, 137, '2009-01-19 00:33:11.973218') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.974612', 1, 16, 137, '2009-01-19 00:33:11.974612') RETURNING "id"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.976008', 1, 32, 137, '2009-01-19 00:33:11.976008') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.977436', 1, 7, 137, '2009-01-19 00:33:11.977436') RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.978680', 1, 26, 137, '2009-01-19 00:33:11.978680') RETURNING "id"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "character_traits" ("updated_at", "race_id", "trait_id", "character_id", "created_at") VALUES('2009-01-19 00:33:11.979929', 1, 9, 137, '2009-01-19 00:33:11.979929') RETURNING "id"[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mINSERT INTO "character_races" ("updated_at", "race_id", "parts", "character_id", "created_at") VALUES('2009-01-19 00:33:11.981212', 1, 16, 137, '2009-01-19 00:33:11.981212') RETURNING "id"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+Rendering characters/redraw
+  [4;36;1mHouse Load (0.5ms)[0m   [0;1mSELECT * FROM "houses" WHERE ("houses"."id" = 1) [0m
+  [4;35;1mCharacter Load (0.4ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".house_id = 1 AND (marriage_id is null)) [0m
+  [4;36;1mCharacter Load (1.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (3.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.9ms)
+  [4;36;1mCharacter Load (0.5ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (2.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'female') [0m
+Rendered characters/_character (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "characters" WHERE (house_id = 1 and marriage_id is null and gender != 'male') [0m
+Rendered characters/_character (1.8ms)
+  [4;36;1mMarriage Load (1.2ms)[0m   [0;1mSELECT DISTINCT "marriages".* FROM "marriages" INNER JOIN characters ON marriages.id = characters.marriage_id WHERE (("characters".house_id = 1)) [0m
+  [4;35;1mCharacter Load (0.4ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 1) [0m
+Rendered marriages/_marriage (1.8ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 2) [0m
+Rendered marriages/_marriage (1.5ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 3) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 4) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 5) [0m
+Rendered marriages/_marriage (1.4ms)
+  [4;36;1mCharacter Load (0.4ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 6) [0m
+Rendered marriages/_marriage (1.8ms)
+  [4;35;1mCharacter Load (0.6ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".marriage_id = 7) [0m
+Rendered marriages/_marriage (1.9ms)
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".marriage_id = 30) [0m
+Rendered marriages/_marriage (1.5ms)
+Rendered marriages/_marriage (0.7ms)
+  [4;35;1mRace Load (0.7ms)[0m   [0mSELECT "races".* FROM "races" INNER JOIN character_races ON races.id = character_races.race_id WHERE (("character_races".character_id = 137)) [0m
+Rendered characters/_detail (8.9ms)
+Completed in 287ms (View: 52, DB: 72) | 200 OK [http://localhost/characters]
