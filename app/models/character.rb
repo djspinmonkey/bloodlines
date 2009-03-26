@@ -34,7 +34,9 @@ class Character < ActiveRecord::Base
     half_parts = []
     (parents.husband.races + parents.wife.races).uniq.each do |race|
       parent_parts = parents.husband.parts(race) + parents.wife.parts(race)
-      character_races << CharacterRace.new(:character => self, :race => race, :parts => parent_parts / 2) if parent_parts > 1
+      character_races << CharacterRace.new(:character => self, 
+					   :race => race, 
+					   :parts => parent_parts / 2) if parent_parts > 1
       half_parts << race if parent_parts.odd?
     end
     (half_parts.size / 2).times { add_part(half_parts.delete_at(rand(half_parts.size))) }
@@ -64,7 +66,8 @@ class Character < ActiveRecord::Base
   # Currently, this does not allow teh gay.  To change that, just remove the
   # gender clause from the conditions.
   def potential_spouses
-    Character.find(:all, :conditions => "house_id = #{self.house_id} and marriage_id is null and gender != '#{self.gender}'")
+    Character.find(:all, :conditions => "house_id = #{self.house_id} and 
+		   marriage_id is null and gender != '#{self.gender}'")
   end
 
   def racial_traits (race = nil)
@@ -140,7 +143,8 @@ class Character < ActiveRecord::Base
       mother = parents.wife
 
       parent_races = (father.races + mother.races).uniq
-      parent_races.each { |r| parent_traits[r] = (father.racial_traits(r) + mother.racial_traits(r)).uniq }
+      parent_races.each { |r| parent_traits[r] = (father.racial_traits(r) + 
+						  mother.racial_traits(r)).uniq }
     end
 
     # figure out parent races
