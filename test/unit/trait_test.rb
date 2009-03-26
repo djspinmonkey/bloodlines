@@ -18,6 +18,6 @@ class TraitTest < ActiveSupport::TestCase
     t.save
 
     t = Trait.find(id)
-    assert_equal('fire +1, mana -3, strength +2', t.bonus_string, "Incorrect bonus string with all positive bonuses")
+    assert_equal('fire +1, mana -3, strength +2', t.bonus_string, "Incorrect bonus string with mixed positive and negative bonuses")
   end
 end
