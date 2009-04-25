@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TraitTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
+
   def test_bonuses
     t = Trait.new(:name => 'test1')
     t.bonuses = {'strength' => 2, 'fire' => 1}
@@ -20,4 +20,5 @@ class TraitTest < ActiveSupport::TestCase
     t = Trait.find(id)
     assert_equal('fire +1, mana -3, strength +2', t.bonus_string, "Incorrect bonus string with mixed positive and negative bonuses")
   end
+
 end
