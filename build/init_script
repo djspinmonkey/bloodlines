@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# This is a FreeBSD-style init script.  It is copied in to place during install
+# by capistrano - see the Capfile.
+
+. /etc/rc.subr
+
+name='bloodlines'
+rcvar=`set_rcvar`
+
+command="/opt/john/apps/${name}/current/script/server"
+command_args="-p 3002"
+
+pidfile="/opt/john/apps/${name}/shared/pids/${name}.pid"
+
+load_rc_config $name
+run_rc_command "$1"
