@@ -85,7 +85,7 @@ class Character < ActiveRecord::Base
   def remove_trait (trait)
     cts = character_traits.select { |ct| ct.trait == trait }
     cts.each do |ct|
-      self.character_traits.remove(ct)
+      self.character_traits.delete(ct)
       ct.destroy
     end
   end

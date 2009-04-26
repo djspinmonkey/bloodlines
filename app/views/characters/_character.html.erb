@@ -1,3 +1,5 @@
+<% prefix ||= nil %>
+
 <% div_for(character, prefix) do %>
   <% remote_form_for character do |f| %>
     <%= link_to_remote h(character.name), :url => character_url(character), :method => :get %>
