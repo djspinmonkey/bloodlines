@@ -9,7 +9,8 @@ namespace :deploy do
   end
 
   task :after_update_code do
-    run "cp #{release_path}/build/init_script /usr/local/etc/rc.d/bloodlines"
+    sudo "cp #{release_path}/build/init_script /usr/local/etc/rc.d/bloodlines"
+    sudo "chmod a+x /usr/local/etc/rc.d/bloodlines"
   end
 
 end
