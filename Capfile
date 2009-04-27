@@ -5,7 +5,7 @@ load 'config/deploy'
 namespace :deploy do
 
   task :restart do
-    run "/usr/local/etc/rc.d/bloodlines restart"
+    sudo "/usr/local/etc/rc.d/bloodlines restart"
   end
 
   task :after_update_code do

@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :locations
+
+  map.resources :regions
+
   map.resources :houses
 
   map.resources :character_races

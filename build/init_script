@@ -9,9 +9,9 @@ name='bloodlines'
 rcvar=`set_rcvar`
 
 command="/opt/john/apps/${name}/current/script/server"
-command_args="-p 3002"
+command_args="-d -p 3002"
 
-pidfile="/opt/john/apps/${name}/shared/pids/${name}.pid"
+pidfile="/opt/john/apps/${name}/shared/pids/server.pid"
 
 load_rc_config $name
 run_rc_command "$1"
