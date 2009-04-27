@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081120020550) do
+ActiveRecord::Schema.define(:version => 20090427005641) do
 
   create_table "character_races", :force => true do |t|
     t.integer  "character_id"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20081120020550) do
     t.datetime "updated_at"
   end
 
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "region_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "marriages", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -61,6 +69,13 @@ ActiveRecord::Schema.define(:version => 20081120020550) do
   create_table "races_traits", :id => false, :force => true do |t|
     t.integer "race_id"
     t.integer "trait_id"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "trait_prerequisites", :id => false, :force => true do |t|
