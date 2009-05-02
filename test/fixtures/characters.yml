@@ -9,3 +9,13 @@ two:
   name: MyString
   gender: MyString
   house_id: 1
+
+dude1:
+  name: Adam
+  gender: male
+  house_id: 1
+
+dude2:
+  name: Steve
+  gender: male
+  house_id: 1
