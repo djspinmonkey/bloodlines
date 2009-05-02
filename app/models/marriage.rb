@@ -2,7 +2,7 @@ class Marriage < ActiveRecord::Base
   has_many :characters
 
   def husband
-    @husband ||= characters.select{ |c| c.male? }.first
+    @husband ||= characters.select{ |c| c.male? }.sort_by(&:id).first
   end
 
   def husband_id
@@ -10,7 +10,7 @@ class Marriage < ActiveRecord::Base
   end
 
   def wife
-    @wife ||= characters.select{ |c| c.female? }.first
+    @wife ||= characters.select{ |c| c.female? }.sort_by(&:id).first
   end
 
   def wife_id
