@@ -17,6 +17,7 @@ class Character < ActiveRecord::Base
   MALE = 'male'
   FEMALE = 'female'
   GENDERS = [MALE, FEMALE]
+  STATS = [:strength]  # TODO: figure out what the stats are, and where they live
 
   # the odds that a given racial trait will come from a parent (instead of
   # being a random trait from the appropriate race)
@@ -77,6 +78,7 @@ class Character < ActiveRecord::Base
   end
 
   def add_trait (trait, race = nil)
+    return if character_traits.select { |ct| ct.trait == trait }.size > 0
     ct = CharacterTrait.new(:character => self, :trait => trait, :race => race)
     self.character_traits.push ct
     reset_bonuses
@@ -184,9 +186,11 @@ class Character < ActiveRecord::Base
   end
 
   def bonuses
+    reset_bonuses
     if @bonus_hash.nil?
       @bonus_hash = {}
       traits.each do |t|
+        next unless t.bonuses
         t.bonuses.each do |type, bonus|
           @bonus_hash[type] ||= 0
           @bonus_hash[type] += bonus
@@ -206,9 +210,14 @@ class Character < ActiveRecord::Base
   end
 
   def method_missing (sym, *args)
+    # dynamic foo_bonus methods
     if sym.to_s.ends_with?("_bonus")
       type = sym.to_s.sub(/_bonus$/, '')
       return bonus(type)
+    end
+
+    if STATS.include? sym
+      return 10 + bonus(sym.to_s)
     end
 
     super
