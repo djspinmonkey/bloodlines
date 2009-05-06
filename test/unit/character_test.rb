@@ -14,7 +14,7 @@ class CharacterTest < ActiveSupport::TestCase
 
     @race = Race.new(:name => "Human")
 
-    @char.race
+    @char.race = @race
   end
 
   def test_add_trait
@@ -23,6 +23,16 @@ class CharacterTest < ActiveSupport::TestCase
 
     assert_equal 1, @char.traits.size, "Wrong number of traits after assignment"
     assert_equal @trait1, @char.traits.pop, "Wrong trait assigned"
+  end
+
+  def test_adding_the_same_trait_twice_does_nothing
+    @char.add_trait(@trait1)
+    @char.save
+
+    @char.add_trait(@trait1)
+    @char.save
+
+    assert_equal 1, @char.traits.size, "Wrong number of traits after double assignment"
   end
 
   def test_remove_trait
@@ -38,10 +48,7 @@ class CharacterTest < ActiveSupport::TestCase
     assert_equal @trait3, @char.traits.pop, "Wrong trait remaining after deletion"
   end
 
-  def test_add_random_racial_trait
-  end
-
-  def test_bonuses
+  def test_foo_bonus
     @char.add_trait(@trait2)
     @char.add_trait(@trait3)
     @char.save
@@ -51,6 +58,21 @@ class CharacterTest < ActiveSupport::TestCase
 
     assert_equal 6, @char.strength_bonus, "Incorrect strength bonus"
     assert_equal 0, @char.bogus_bonus, "Non-zero bogus bonus"
+  end
+
+  def test_stats
+    assert_equal 10, @char.strength
+
+    #TODO!
+
+    return
+    
+    @char.add_trait(@trait2)
+    @char.save
+    assert_equal 11, @char.strength
+
+    #@char.add_trait(@trait3)
+    #assert_equal 16, @char.strength
   end
 
 end
