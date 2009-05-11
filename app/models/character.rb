@@ -81,7 +81,6 @@ class Character < ActiveRecord::Base
     return if character_traits.select { |ct| ct.trait == trait }.size > 0
     ct = CharacterTrait.new(:character => self, :trait => trait, :race => race)
     self.character_traits.push ct
-    reset_bonuses
   end
 
   def remove_trait (trait)
@@ -186,27 +185,21 @@ class Character < ActiveRecord::Base
   end
 
   def bonuses
-    reset_bonuses
-    if @bonus_hash.nil?
-      @bonus_hash = {}
-      traits.each do |t|
-        next unless t.bonuses
-        t.bonuses.each do |type, bonus|
-          @bonus_hash[type] ||= 0
-          @bonus_hash[type] += bonus
-        end
+    # TODO cache bonuses?
+    bonus_hash = {}
+    character_traits.collect(&:trait).each do |t|
+      next if t.nil? or t.bonuses.nil?
+      t.bonuses.each do |type, bonus|
+        bonus_hash[type] ||= 0
+        bonus_hash[type] += bonus
       end
     end
 
-    return @bonus_hash
+    bonus_hash
   end
 
   def bonus(type)
     bonuses[type] || 0
-  end
-
-  def reset_bonuses
-    @bonus_hash = nil
   end
 
   def method_missing (sym, *args)
