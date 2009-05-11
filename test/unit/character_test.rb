@@ -63,16 +63,15 @@ class CharacterTest < ActiveSupport::TestCase
   def test_stats
     assert_equal 10, @char.strength
 
-    #TODO!
-
-    return
-    
     @char.add_trait(@trait2)
     @char.save
     assert_equal 11, @char.strength
 
-    #@char.add_trait(@trait3)
-    #assert_equal 16, @char.strength
+    @char.add_trait(@trait3)
+    assert_equal 16, @char.strength
+
+    @char.remove_trait(@trait2)
+    assert_equal 15, @char.strength
   end
 
 end
