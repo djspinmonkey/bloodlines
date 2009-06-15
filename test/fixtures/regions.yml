@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  description: MyText
+radicalia:
+  id: 1
+  name: Radicalia
+  description: This region is radical.
 
-two:
-  name: MyString
-  description: MyText
+awesomeland:
+  id: 2
+  name: Awesomeland
+  description: This region, on the other hand, is radical

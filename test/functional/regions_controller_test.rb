@@ -21,23 +21,23 @@ class RegionsControllerTest < ActionController::TestCase
   end
 
   test "should show region" do
-    get :show, :id => regions(:one).to_param
+    get :show, :id => regions(:radicalia).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => regions(:one).to_param
+    get :edit, :id => regions(:radicalia).to_param
     assert_response :success
   end
 
   test "should update region" do
-    put :update, :id => regions(:one).to_param, :region => { }
+    put :update, :id => regions(:radicalia).to_param, :region => { }
     assert_redirected_to region_path(assigns(:region))
   end
 
   test "should destroy region" do
     assert_difference('Region.count', -1) do
-      delete :destroy, :id => regions(:one).to_param
+      delete :destroy, :id => regions(:radicalia).to_param
     end
 
     assert_redirected_to regions_path
