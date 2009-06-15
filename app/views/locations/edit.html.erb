@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :region %><br />
-    <%= f.text_field :region %>
+    <%= f.select :region_id, @regions.collect { |r| [r.name, r.id] }  %>
   </p>
   <p>
     <%= f.submit 'Update' %>

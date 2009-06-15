@@ -25,6 +25,7 @@ class LocationsController < ApplicationController
   # GET /locations/new.xml
   def new
     @location = Location.new
+    @regions = Region.all.sort_by(&:name)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class LocationsController < ApplicationController
   # GET /locations/1/edit
   def edit
     @location = Location.find(params[:id])
+    @regions = Region.all.sort_by(&:name)
   end
 
   # POST /locations
