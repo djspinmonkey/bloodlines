@@ -29,7 +29,7 @@ class Trait < ActiveRecord::Base
   def bonus_string
     strings = []
     bonuses.keys.sort.each do |k|
-      value = bonuses[k]
+      value = bonuses[k] || 0
       sign = (value > 0) ? "+" : ""     # we only need to add the plus signs
       strings.push "#{k} #{sign}#{value}"
     end
