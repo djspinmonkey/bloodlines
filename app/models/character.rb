@@ -2,6 +2,7 @@ require 'mathn'
 
 class Character < ActiveRecord::Base
   belongs_to :house
+  belongs_to :location
   belongs_to :marriage
   belongs_to :parents, :class_name => 'Marriage'
   has_many :traits, :through => :character_traits
@@ -14,6 +15,8 @@ class Character < ActiveRecord::Base
   attr_accessor :new_marriage
   alias_method :new_marriage?, :new_marriage
 
+  # TODO: validations on characters
+
   MALE = 'male'
   FEMALE = 'female'
   GENDERS = [MALE, FEMALE]
@@ -21,9 +24,7 @@ class Character < ActiveRecord::Base
 
   # the odds that a given racial trait will come from a parent (instead of
   # being a random trait from the appropriate race)
-  HERITABILITY = 0.75     
-
-  # TODO: validations
+  HERITABILITY = 0.9
 
   def init_parents_id
     return nil
@@ -191,7 +192,7 @@ class Character < ActiveRecord::Base
       next if t.nil? or t.bonuses.nil?
       t.bonuses.each do |type, bonus|
         bonus_hash[type] ||= 0
-        bonus_hash[type] += bonus
+        bonus_hash[type] += bonus || 0
       end
     end
 
