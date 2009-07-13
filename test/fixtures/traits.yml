@@ -1,11 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  description: MyString
+vanilla:
+  name: Vanilla Test Trait
+  description: A test trait that does nothing.
   bonuses: {}
 
-two:
-  name: MyString
-  description: MyString
-  bonuses: {}
+strong:
+  name: Strong
+  description: Bend Bars and stuff
+  bonuses: { strength: 1 }
+
+really_strong:
+  name: Really Strong
+  description: Bend Bars and stuff... a lot!
+  bonuses: { strength: 5 }

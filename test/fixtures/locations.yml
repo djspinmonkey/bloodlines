@@ -9,3 +9,18 @@ two:
   name: MyString
   description: MyText
   region_id: 1
+
+home:
+  name: Homelandia
+  description: This is a test homeland.
+  region_id: 1
+
+neighbor:
+  name: Nextdoorsville
+  description: This is a neighbor to Homelandia.
+  region_id: 1
+
+distant:
+  name: Farawaysburg
+  description: You can't get there from here.
+  region_id: 1

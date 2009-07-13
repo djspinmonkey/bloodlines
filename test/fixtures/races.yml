@@ -7,3 +7,8 @@ one:
 two:
   name: MyString
   description: MyString
+
+human:
+  id: 1
+  name: Human
+  description: Plain jane vanilla human
