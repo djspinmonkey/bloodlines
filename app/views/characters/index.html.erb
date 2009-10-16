@@ -1,28 +1,46 @@
 <h1>Listing characters</h1>
 
-<table border=1>
-  <tr>
-    <th>Name</th>
-    <th>Gender</th>
-    <th>Race</th>
-    <th>House</th>
-    <th>Spouse</th>
-    <th colspan=2>Actions</th>
-  </tr>
+<ul class="tabs">
+  <li><a hef="#first">List</a></li>
+  <li><a hef="#first">Counts</a></li>
+</ul>
 
-<% for character in @characters %>
-  <tr>
-    <td><%=link_to h(character.name), character %></td>
-    <td><%=h character.gender.humanize %></td>
-    <td><%=h character.race_string %></td>
-    <td><%= house_link(character) %></td>
-    <td><%= spouse_link(character) %></td>
-    <td><%= link_to 'Edit', edit_character_path(character) %></td>
-    <td><%= link_to 'Destroy', character, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="panes">
+  <div>
+    <table border=1>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Race</th>
+        <th>House</th>
+        <th>Spouse</th>
+        <th colspan=2>Actions</th>
+      </tr>
+
+      <% for character in @characters %>
+        <tr>
+          <td><%=link_to h(character.name), character %></td>
+          <td><%=h character.gender.humanize %></td>
+          <td><%=h character.race_string %></td>
+          <td><%= house_link(character) %></td>
+          <td><%= spouse_link(character) %></td>
+          <td><%= link_to 'Edit', edit_character_path(character) %></td>
+          <td><%= link_to 'Destroy', character, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div>
+    There are some characters.
+  </div>
 
 <br />
 
 <%= link_to 'New character', new_character_path %>
+
+<script>
+  $(function() { 
+    // setup ul.tabs to work as tabs for each div directly under div.panes 
+    $("ul.tabs").tabs("div.panes > div"); 
+  });
+</script>
